@@ -6,6 +6,8 @@ phases:
       docker: 19
   pre_build:
     commands:
+      - echo default region value is $AWS_DEFAULT_REGION
+      - echo ecr repo value is ${ECR_REPOSITORY_URI}
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
